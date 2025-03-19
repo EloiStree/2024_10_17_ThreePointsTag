@@ -6,11 +6,13 @@ You don't want a heavy package that updates every 6 months cluttering your proje
 
 To address this, I’ve separated my tool, **ThreePointsAction**, into three distinct components:
 
-- **ThreePointTag**:  
-  Allows you to tag objects, prefabs, scenes, and meshes with a 3-point interface, enabling them to be loaded when needed.
+- **ThreePointTag**:
+  - Allows you to tag objects, prefabs, scenes, and meshes with a 3-point interface, enabling them to be loaded when needed.
 
 - **ThreePointsLoader**:  
-  Utilizes the ThreePointTag to load scenes, prefabs, and actions based on the three given points.
+  - Utilizes the ThreePointTag to load scenes, prefabs, and actions based on the three given points.
+  - https://github.com/EloiStree/2024_10_17_ThreePointsLoader
 
 - **ThreePointsMeshBuilder**:  
-  Enables you to build meshes that can be exported from tagged triangles using a finger or XR controller.
+  - Enables you to build meshes that can be exported from tagged triangles using a finger or XR controller.
+  - https://github.com/EloiStree/2024_10_17_ThreePointsMeshBuilder
