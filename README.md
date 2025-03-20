@@ -17,3 +17,7 @@ To address this, I’ve separated my tool, **ThreePointsAction**, into three dis
 - **ThreePointsMeshBuilder**:  
   - Enables you to build meshes that can be exported from tagged triangles using a finger or XR controller.
   - https://github.com/EloiStree/2024_10_17_ThreePointsMeshBuilder.git
+
+- **ThreePointsShaders**:
+  - Making cool triangle with nice color to give context: grond, walls, flat, ... 
+  - https://github.com/EloiStree/2024_10_17_ThreePointsShader.git
