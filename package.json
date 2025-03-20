@@ -8,10 +8,15 @@
   "description": "You package description",                         
   "keywords": ["Script","Tool"],                       
   "dependencies":{},     
-  "relatedPackages":{},     
-  "samples" : [],     
+  "relatedPackages":{},   "samples": [
+    {
+      "displayName": "Sample Scene",
+      "description": "A sample scene demonstrating the manager system.",
+      "path": "Scene/Demo"
+    }
+  ],
   "author" : {
-"name":"",
+"name":"Eloi Stree",
 "mail":"",
 "url":""},     
   "repository":{
