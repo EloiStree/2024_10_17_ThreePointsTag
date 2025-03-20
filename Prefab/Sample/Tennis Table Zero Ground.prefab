@@ -26,7 +26,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.525, y: 0.005, z: 2.74}
+  m_LocalScale: {x: 1.525, y: 0.0005, z: 2.74}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8190317882068466156}
@@ -248,15 +248,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 474827353101753225, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7624999
+      value: 0.7625
       objectReference: {fileID: 0}
     - target: {fileID: 474827353101753225, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9802322e-10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 474827353101753225, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3700001
+      value: -1.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288693853800569426, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
+      propertyPath: m_size
+      value: 
+      objectReference: {fileID: 6011226998445091610}
+    - target: {fileID: 1288693853800569426, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
+      propertyPath: m_leftUpMillimeter
+      value: 2740
+      objectReference: {fileID: 0}
+    - target: {fileID: 1288693853800569426, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
+      propertyPath: m_leftRightMillimeter
+      value: 1525
       objectReference: {fileID: 0}
     - target: {fileID: 2018401045805518137, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -264,11 +276,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2018401045805518137, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9802322e-10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2018401045805518137, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3700001
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 3667089921288664243, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_Name
@@ -276,15 +288,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3904044392168965186, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7624999
+      value: 0.7625
       objectReference: {fileID: 0}
     - target: {fileID: 3904044392168965186, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.9802322e-10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3904044392168965186, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3700001
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 4077771708383509152, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -292,11 +304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4077771708383509152, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9802322e-10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4077771708383509152, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3700001
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 6630730149810036401, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -340,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_end.x
-      value: 0.7624999
+      value: 0.7625
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_end.y
@@ -348,7 +360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_end.z
-      value: -1.3700001
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_start.x
@@ -360,7 +372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_start.z
-      value: 1.3700001
+      value: 1.37
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_middle.x
@@ -372,7 +384,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_points.m_middle.z
-      value: -1.3700001
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_distanceAndAngle.m_endPointAngle
@@ -380,19 +392,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_distanceAndAngle.m_startPointAngle
-      value: 29.098969
+      value: 29.098976
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
+      propertyPath: m_triangle.m_distanceAndAngle.m_middlePointAngle
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_distanceAndAngle.m_startEndDistance
-      value: 3.1357975
+      value: 3.1357973
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_distanceAndAngle.m_middleEndDistance
-      value: 1.5249999
+      value: 1.525
       objectReference: {fileID: 0}
     - target: {fileID: 7268871134910479923, guid: abbbcbbc24c6b464cb8cb1ca3a58cdf2, type: 3}
       propertyPath: m_triangle.m_distanceAndAngle.m_startMiddleDistance
-      value: 2.7400002
+      value: 2.74
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
