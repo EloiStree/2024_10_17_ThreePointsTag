@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Eloi.ThreePoints
 {
@@ -9,6 +10,19 @@ namespace Eloi.ThreePoints
     {
         public STRUCT_ThreePointTriangle m_points;
         public STRUCT_ThreePointTriangleDistanceAndAngle m_distanceAndAngle;
+
+        public ThreePointsTriangleDefault()
+        {
+            m_points = new STRUCT_ThreePointTriangle();
+            m_distanceAndAngle = new STRUCT_ThreePointTriangleDistanceAndAngle();
+            Clear();
+        }
+        public ThreePointsTriangleDefault(Vector3 start, Vector3 middle, Vector3 end)
+        {
+            m_points = new STRUCT_ThreePointTriangle();
+            m_distanceAndAngle = new STRUCT_ThreePointTriangleDistanceAndAngle();
+            SetThreePoints(start, middle, end);
+        }
         public void ComputerFromOrigine()
         {
             m_distanceAndAngle.m_startMiddleDistance = Vector3.Distance(m_points.m_start, m_points.m_middle);
@@ -145,6 +159,56 @@ namespace Eloi.ThreePoints
         }
 
 
+        public void GetTrianglesBorderDistance(out float distance) {
+
+            distance = m_distanceAndAngle.m_startEndDistance+ m_distanceAndAngle.m_startMiddleDistance + m_distanceAndAngle.m_middleEndDistance;
+        }
+        public void GetSquareBorderDistance(out float distance)
+        {
+            GetOrderDistance(out float biggest, out float middle, out float smallest);
+            distance = middle* 2 + smallest * 2;
+        }
+
+        private void GetOrderDistance(out float biggest, out float middle, out float smallest)
+        {
+            float[] distances = new float[3] { m_distanceAndAngle.m_startEndDistance, m_distanceAndAngle.m_startMiddleDistance, m_distanceAndAngle.m_middleEndDistance };
+            Array.Sort(distances);
+            biggest = distances[2];
+            middle = distances[1];
+            smallest = distances[0];
+
+        }
+        public void HasAngle(out bool hasAngle, float angle, float tolerence = 5f)
+        {
+            hasAngle = false;
+            float[] angles = new float[3] { m_distanceAndAngle.m_startPointAngle, m_distanceAndAngle.m_middlePointAngle, m_distanceAndAngle.m_endPointAngle };
+            for (int i = 0; i < angles.Length; i++)
+            {
+                if (Math.Abs(angles[i] - angle) < tolerence)
+                {
+                    hasAngle = true;
+                    return;
+                }
+            }
+        }
+        public void HasRightAngle(out bool isRightAngle, float tolerence=5f)
+        {
+            HasAngle(out isRightAngle, 90, tolerence);
+        }
+        public void IsLine(out bool isLine, float tolerence = 5f)
+        {
+           
+            HasAngle(out isLine, 0, tolerence);
+        }
+        public void IsEquilateral(out bool isIsocele, float tolerence = 5f)
+        {
+            bool isFirstAngleAround60= Mathf.Abs(60-m_distanceAndAngle.m_startPointAngle) < tolerence;
+            bool isSecondAngleAround60 = Mathf.Abs(60 - m_distanceAndAngle.m_middlePointAngle) < tolerence;
+            bool isThirdAngleAround60 = Mathf.Abs(60 - m_distanceAndAngle.m_endPointAngle) < tolerence;
+            isIsocele = isFirstAngleAround60 && isSecondAngleAround60 && isThirdAngleAround60;
+
+        }
+       
 
         public void Clear()
         {
@@ -154,6 +218,13 @@ namespace Eloi.ThreePoints
         public void GetCentroid(out Vector3 centroid)
         {
             centroid = (m_points.m_start + m_points.m_middle + m_points.m_end) / 3;
+        }
+
+        public I_ThreePointsGet Copy()
+        {
+            ThreePointsTriangleDefault copy = new ThreePointsTriangleDefault();
+            copy.SetThreePoints(m_points.m_start, m_points.m_middle, m_points.m_end);
+            return copy;
         }
     }
 }

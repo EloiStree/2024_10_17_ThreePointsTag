@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 namespace Eloi.ThreePoints
 {
+
     [ExecuteInEditMode]
     public class ThreePointsMono_Transform3 : MonoBehaviour
     {
