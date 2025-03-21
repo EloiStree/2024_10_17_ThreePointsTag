@@ -169,7 +169,7 @@ namespace Eloi.ThreePoints
             distance = middle* 2 + smallest * 2;
         }
 
-        private void GetOrderDistance(out float biggest, out float middle, out float smallest)
+        public void GetOrderDistance(out float biggest, out float middle, out float smallest)
         {
             float[] distances = new float[3] { m_distanceAndAngle.m_startEndDistance, m_distanceAndAngle.m_startMiddleDistance, m_distanceAndAngle.m_middleEndDistance };
             Array.Sort(distances);
@@ -177,6 +177,14 @@ namespace Eloi.ThreePoints
             middle = distances[1];
             smallest = distances[0];
 
+        }
+        public void GetOrderAngle(out float biggest, out float middle, out float smallest)
+        {
+            float[] angles = new float[3] { m_distanceAndAngle.m_startPointAngle, m_distanceAndAngle.m_middlePointAngle, m_distanceAndAngle.m_endPointAngle };
+            Array.Sort(angles);
+            biggest = angles[2];
+            middle = angles[1];
+            smallest = angles[0];
         }
         public void HasAngle(out bool hasAngle, float angle, float tolerence = 5f)
         {
@@ -225,6 +233,29 @@ namespace Eloi.ThreePoints
             ThreePointsTriangleDefault copy = new ThreePointsTriangleDefault();
             copy.SetThreePoints(m_points.m_start, m_points.m_middle, m_points.m_end);
             return copy;
+        }
+
+        public void GetAirSurface(out float airSurface)
+        {
+            airSurface= CalculateTriangleArea(m_distanceAndAngle.m_startEndDistance, m_distanceAndAngle.m_startMiddleDistance, m_distanceAndAngle.m_middleEndDistance);
+        }
+        /// <summary>
+        /// https://www.youtube.com/watch?v=6KPSmajeseI
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <param name="c"></param>
+        /// <returns></returns>
+        float CalculateTriangleArea(float a, float b, float c)
+        {
+            //https://www.youtube.com/watch?v=6KPSmajeseI
+            float s = (a + b + c) / 2; // Semi-perimeter
+            return Mathf.Sqrt(s * (s - a) * (s - b) * (s - c)); // Heron's formula
+        }
+        public void GetBiggestAngle(out float biggestAngle)
+        {
+            GetOrderAngle(out float biggest, out float middle, out float smallest);
+            biggestAngle = biggest;
         }
     }
 }
