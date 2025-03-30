@@ -5,6 +5,11 @@ namespace Eloi.ThreePoints
     [ExecuteInEditMode]
     public class ThreePointsMono_DrawTransform3 :MonoBehaviour
     {
+
+        private void Reset()
+        {
+            m_source = GetComponentInParent<ThreePointsMono_Transform3>();
+        }
         public ThreePointsMono_Transform3 m_source;
         public bool m_useDraw = true;
         public Color m_color = Color.green;

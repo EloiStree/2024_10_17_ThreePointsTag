@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,8 +10,29 @@ namespace Eloi.ThreePoints
 {
 
     [ExecuteInEditMode]
-    public class ThreePointsMono_Transform3 : MonoBehaviour
+    public class ThreePointsMono_Transform3 : MonoBehaviour, I_ThreePointsGet
     {
+
+        private void Reset()
+        {
+            Transform[] childrens = this.gameObject.GetComponentsInChildren<Transform>().Distinct().ToArray();
+            foreach (Transform t in childrens) {
+            
+                if (t.name.ToLower() .Contains("start"))
+                {
+                    m_startPoint = t;
+                }
+                if (t.name.ToLower().Contains("middle") || t.name.ToLower().Contains("mid"))
+                {
+                    m_middlePoint = t;
+                }
+                if (t.name.ToLower().Contains("end"))
+                {
+                    m_endPoint = t;
+                }
+            }
+        }
+
         public Transform m_startPoint;
         public Transform m_middlePoint;
         public Transform m_endPoint;
@@ -126,6 +148,36 @@ namespace Eloi.ThreePoints
             if (distanceEnd > distance)
             { closestCorner = ThreePointCorner.End; distance = distanceEnd; closestPosition = end; }
 
+        }
+
+        public void GetPoints(out Vector3[] arrayOf3)
+        {
+
+            RefreshDataWithoutNotification();
+            m_triangle.GetPoints(out arrayOf3);
+        }
+
+        public void GetPoint(ThreePointCorner corner, out Vector3 point)
+        {
+            RefreshDataWithoutNotification();
+            m_triangle.GetPoint(corner, out point);
+        }
+
+        public void GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end)
+        {
+            RefreshDataWithoutNotification();
+            m_triangle.GetThreePoints(out start, out middle, out end);
+        }
+
+        public void GetDistanceAngle(out I_ThreePointsDistanceAngleGet computed)
+        {
+            RefreshDataWithoutNotification();
+            computed= m_triangle;
+        }
+        public I_ThreePointsDistanceAngleGet GetDistanceAngle()
+        {
+            RefreshDataWithoutNotification();
+            return m_triangle;
         }
     }
 }

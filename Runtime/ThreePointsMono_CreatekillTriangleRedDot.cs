@@ -2,7 +2,7 @@
 
 namespace Eloi.ThreePoints
 {
-    public class ThreePointsMono_CreatekillTriangleRedDot : MonoBehaviour
+    public class ThreePointsMono_CreateKillTriangleRedDot : MonoBehaviour
     {
 
         public ThreePointsMono_CreateKillRedDot m_start;

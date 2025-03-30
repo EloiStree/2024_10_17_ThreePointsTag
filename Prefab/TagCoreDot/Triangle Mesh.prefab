@@ -83,15 +83,15 @@ MonoBehaviour:
   m_endPoint: {fileID: 5163906200900014942}
   m_triangle:
     m_points:
-      m_start: {x: 1.0000001, y: 0.00000011920929, z: 1.9199997}
-      m_middle: {x: -1.0138173, y: 0.015001953, z: 1.9058747}
-      m_end: {x: -0.9999999, y: -0.00000011920929, z: -0.079999685}
+      m_start: {x: 0.50000006, y: 0.000000059604645, z: 0.49999985}
+      m_middle: {x: -0.50690866, y: 0.0075009763, z: 0.49293733}
+      m_end: {x: -0.49999994, y: -0.000000059604645, z: -0.49999985}
     m_distanceAndAngle:
-      m_startMiddleDistance: 2.0139227
-      m_middleEndDistance: 1.9859792
-      m_startEndDistance: 2.8284266
+      m_startMiddleDistance: 1.0069613
+      m_middleEndDistance: 0.9929896
+      m_startEndDistance: 1.4142133
       m_middlePointAngle: 90
-      m_startPointAngle: 44.599735
+      m_startPointAngle: 44.59973
       m_endPointAngle: 45.400272
   m_onPushed:
     m_PersistentCalls:
@@ -187,6 +187,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 472001962072239877}
     m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ac0286e767cd6a845a48170838be7d1a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac0286e767cd6a845a48170838be7d1a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ac0286e767cd6a845a48170838be7d1a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ac0286e767cd6a845a48170838be7d1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

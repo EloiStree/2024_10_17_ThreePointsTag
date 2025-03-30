@@ -10,7 +10,13 @@ namespace Eloi.ThreePoints
     {
         public STRUCT_ThreePointTriangle m_points;
         public STRUCT_ThreePointTriangleDistanceAndAngle m_distanceAndAngle;
-
+        public ThreePointsTriangleDefault(I_ThreePointsGet triangle)
+        {
+            m_points = new STRUCT_ThreePointTriangle();
+            m_distanceAndAngle = new STRUCT_ThreePointTriangleDistanceAndAngle();
+            Clear();
+            SetThreePoints(triangle);
+        }
         public ThreePointsTriangleDefault()
         {
             m_points = new STRUCT_ThreePointTriangle();
@@ -32,6 +38,14 @@ namespace Eloi.ThreePoints
             m_distanceAndAngle.m_middlePointAngle = AngleBetween(m_points.m_start, m_points.m_middle, m_points.m_end);
             m_distanceAndAngle.m_endPointAngle = AngleBetween(m_points.m_start, m_points.m_end, m_points.m_middle);
             m_distanceAndAngle.m_startPointAngle = AngleBetween(m_points.m_middle, m_points.m_start, m_points.m_end);
+        }
+
+
+        public void Translate(Vector3 translateToDestination)
+        {
+            m_points.m_start += translateToDestination;
+            m_points.m_middle += translateToDestination;
+            m_points.m_end += translateToDestination;
         }
 
         private float AngleBetween(Vector3 start, Vector3 middle, Vector3 end)
@@ -257,5 +271,6 @@ namespace Eloi.ThreePoints
             GetOrderAngle(out float biggest, out float middle, out float smallest);
             biggestAngle = biggest;
         }
+
     }
 }
