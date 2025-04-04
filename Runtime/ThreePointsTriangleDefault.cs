@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Eloi.ThreePoints
@@ -272,5 +273,108 @@ namespace Eloi.ThreePoints
             biggestAngle = biggest;
         }
 
+        public void GetLongestSideWithFrontCorner(
+            out Vector3 longSideShortestPointSide,
+            out Vector3 longSideLongestPointSide,
+            out Vector3 oppositeCorner,
+            out Vector3 footPoint,
+            out Vector3 upDirection,
+            out Vector3 frontDirection,
+            out Vector3 rightDirection
+            )
+        {
+            ThreePointEdgeName longestEdge = ThreePointEdgeName.StartMiddle;
+            float longestDistance = m_distanceAndAngle.m_startMiddleDistance;
+            if (m_distanceAndAngle.m_middleEndDistance > longestDistance)
+            {
+                longestEdge = ThreePointEdgeName.MiddleEnd;
+                longestDistance = m_distanceAndAngle.m_middleEndDistance;
+            }
+            if (m_distanceAndAngle.m_startEndDistance > longestDistance)
+            {
+                longestEdge = ThreePointEdgeName.StartEnd;
+                longestDistance = m_distanceAndAngle.m_startEndDistance;
+            }
+            GetSidePointAndFrontalOf(longestEdge, out Vector3 a, out Vector3 b, out Vector3 c);
+            if (Vector3.Distance(a, c) < Vector3.Distance(b, c))
+            {
+                longSideShortestPointSide = a;
+                longSideLongestPointSide = b;
+            }
+            else
+            {
+                longSideShortestPointSide = b;
+                longSideLongestPointSide = a;
+            }
+            oppositeCorner = c;
+
+            // Angle between smallside point, corner point and big side point
+            float angle = Vector3.Angle(oppositeCorner - longSideShortestPointSide, longSideLongestPointSide - longSideShortestPointSide);
+            float hypotenusOfSmallSide = Vector3.Distance(longSideShortestPointSide, oppositeCorner);
+            float adjacentofSmallSide = Mathf.Cos(Mathf.Deg2Rad * angle) * hypotenusOfSmallSide; // Convert angle to radians
+            Debug.Log($"Angle: {angle} - hypotenusOfSmallSide: {hypotenusOfSmallSide} - footPointDistance: {adjacentofSmallSide}");
+
+            Vector3 directionshortToFoot = (longSideLongestPointSide - longSideShortestPointSide).normalized * adjacentofSmallSide;
+            footPoint = longSideShortestPointSide + directionshortToFoot;
+            frontDirection = (longSideLongestPointSide - footPoint).normalized;
+            upDirection = (oppositeCorner - footPoint).normalized;
+            rightDirection = Vector3.Cross(upDirection, frontDirection).normalized;
+
+        }
+        public void GetSidePointAndFrontalOf(ThreePointEdgeName edge, out Vector3 sidePointA, out Vector3 sidePointB, out Vector3 frontalPoint) { 
+        
+            if (edge == ThreePointEdgeName.StartMiddle)
+            {
+                sidePointA = m_points.m_start;
+                sidePointB = m_points.m_middle;
+                frontalPoint = m_points.m_end;
+            }
+            else if (edge == ThreePointEdgeName.MiddleEnd)
+            {
+                sidePointA = m_points.m_middle;
+                sidePointB = m_points.m_end;
+                frontalPoint = m_points.m_start;
+            }
+            else if (edge == ThreePointEdgeName.StartEnd)
+            {
+                sidePointA = m_points.m_start;
+                sidePointB = m_points.m_end;
+                frontalPoint = m_points.m_middle;
+            }
+            else
+            {
+                sidePointA = Vector3.zero;
+                sidePointB = Vector3.zero;
+                frontalPoint = Vector3.zero;
+            }
+        }
+        public void GetLenght(ThreePointEdgeName edge, out float distance) { 
+        
+            if (edge == ThreePointEdgeName.StartMiddle)
+            {
+                distance = m_distanceAndAngle.m_startMiddleDistance;
+            }
+            else if (edge == ThreePointEdgeName.MiddleEnd)
+            {
+                distance = m_distanceAndAngle.m_middleEndDistance;
+            }
+            else if (edge == ThreePointEdgeName.StartEnd)
+            {
+                distance = m_distanceAndAngle.m_startEndDistance;
+            }
+            else
+            {
+                distance = 0;
+            }
+        }
+
+
+    }
+
+    public enum ThreePointEdgeName
+    {
+        StartMiddle,
+        MiddleEnd,
+        StartEnd
     }
 }
