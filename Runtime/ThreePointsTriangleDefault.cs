@@ -174,6 +174,7 @@ namespace Eloi.ThreePoints
         }
 
 
+
         public void GetTrianglesBorderDistance(out float distance) {
 
             distance = m_distanceAndAngle.m_startEndDistance+ m_distanceAndAngle.m_startMiddleDistance + m_distanceAndAngle.m_middleEndDistance;
