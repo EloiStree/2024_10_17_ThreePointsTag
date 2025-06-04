@@ -22,6 +22,8 @@ namespace Eloi.ThreePoints
         }
         public void Draw()
         {
+            if (m_source == null)
+                return;
             m_source.m_triangle.GetThreePoints(out Vector3 start, out Vector3 middle, out Vector3 end);
             Debug.DrawLine(start, middle, m_color);
             Debug.DrawLine(middle, end,   m_color);

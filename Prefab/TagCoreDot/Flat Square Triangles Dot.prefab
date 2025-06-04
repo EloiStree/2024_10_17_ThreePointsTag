@@ -61,7 +61,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3667089921288664243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea97fb01c6d58074d9618cc19a2f0448, type: 3}
+  m_Script: {fileID: 11500000, guid: 93da485a86b2d91488622b5d67838838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_startPoint: {fileID: 2018401045805518137}
@@ -69,21 +69,21 @@ MonoBehaviour:
   m_endPoint: {fileID: 474827353101753225}
   m_triangle:
     m_points:
-      m_start: {x: -0.20999998, y: -0.000000035405158, z: 0.29700002}
-      m_middle: {x: -0.2100001, y: 0.000000035390258, z: -0.29700002}
-      m_end: {x: 0.21000001, y: 0.000000035405158, z: -0.29700002}
+      m_start: {x: -2.21, y: 0.009999964, z: 0.29700002}
+      m_middle: {x: -2.21, y: 0.010000035, z: -0.29700002}
+      m_end: {x: -1.79, y: 0.010000035, z: -0.29700002}
     m_distanceAndAngle:
       m_startMiddleDistance: 0.59400004
-      m_middleEndDistance: 0.4200001
+      m_middleEndDistance: 0.42000008
       m_startEndDistance: 0.72748613
-      m_middlePointAngle: 89.99999
-      m_startPointAngle: 35.263012
-      m_endPointAngle: 54.736996
+      m_middlePointAngle: 90
+      m_startPointAngle: 35.26302
+      m_endPointAngle: 54.736988
   m_onPushed:
     m_PersistentCalls:
       m_Calls: []
   m_pushAtStart: 1
-  m_pushAtUpdate: 1
+  m_pushAtUpdate: 0
 --- !u!1 &6186191222374177859
 GameObject:
   m_ObjectHideFlags: 0

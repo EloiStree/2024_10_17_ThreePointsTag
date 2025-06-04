@@ -95,7 +95,10 @@ namespace Eloi.ThreePoints
 
         public void RefreshDataWithoutNotification()
         {
-            m_triangle.SetThreePoints(m_startPoint.position, m_middlePoint.position, m_endPoint.position);
+            m_triangle.SetThreePoints(
+                m_startPoint.position,
+                m_middlePoint.position,
+                m_endPoint.position);
         }
 
 
@@ -178,6 +181,13 @@ namespace Eloi.ThreePoints
         {
             RefreshDataWithoutNotification();
             return m_triangle;
+        }
+
+        public bool IsOnePointNull()
+        {
+            return m_endPoint == null
+                || m_middlePoint == null
+                || m_startPoint == null;
         }
     }
 }

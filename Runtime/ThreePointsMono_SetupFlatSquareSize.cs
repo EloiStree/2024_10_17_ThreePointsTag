@@ -54,7 +54,7 @@ namespace Eloi.ThreePoints
         [ContextMenu("Set as A2")] public void SetToA2() => SetToWidthHeight(420, 594, 0.5f);
         [ContextMenu("Set as A1")] public void SetToA1() => SetToWidthHeight(594, 841, 0.5f);
         [ContextMenu("Set as A0")] public void SetToA0() => SetToWidthHeight(841, 1189, 0.5f);
-        [ContextMenu("Set Tennis Table")] public void SetToTennisTable() => SetToWidthHeight(1525, 2740, 0.5f);
+        [ContextMenu("Set Tennis Table")] public void SetToTennisTable() => SetToWidthHeight(1525, 2740, 0.76f);
 
 
 

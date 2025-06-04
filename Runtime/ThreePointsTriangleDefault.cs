@@ -368,14 +368,5 @@ namespace Eloi.ThreePoints
                 distance = 0;
             }
         }
-
-
-    }
-
-    public enum ThreePointEdgeName
-    {
-        StartMiddle,
-        MiddleEnd,
-        StartEnd
     }
 }
