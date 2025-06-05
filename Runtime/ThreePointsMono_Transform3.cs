@@ -88,9 +88,9 @@ namespace Eloi.ThreePoints
         }
 
 
-        public void GetCrossProductMiddle(out Vector3 cross)
+        public void GetCrossProductAtMiddle(out Vector3 cross)
         {
-            m_triangle.GetCrossProductMiddle(out cross);
+            m_triangle.GetCrossProductAtMiddle(out cross);
         }
 
         public void RefreshDataWithoutNotification()

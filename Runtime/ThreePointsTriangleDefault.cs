@@ -165,7 +165,7 @@ namespace Eloi.ThreePoints
             }
         }
 
-        public void GetCrossProductMiddle(out Vector3 crossProduct)
+        public void GetCrossProductAtMiddle(out Vector3 crossProduct)
         {
             Vector3 startToMiddle = m_points.m_middle - m_points.m_start;
             Vector3 endToMiddle = m_points.m_middle - m_points.m_end;
